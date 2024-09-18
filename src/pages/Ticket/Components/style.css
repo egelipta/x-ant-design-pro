@@ -1,0 +1,14 @@
+/* Hide scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Ensure scrolling is still possible */
+html {
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.pro-chat-delete-button {
+  display: none; /* This will hide the delete button */
+}

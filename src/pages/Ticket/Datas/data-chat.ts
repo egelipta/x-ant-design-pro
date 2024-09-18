@@ -1,0 +1,40 @@
+export const dataChat = {
+  initialChats: [
+    {
+      content: 'User: chat 1',
+      createAt: 1697862242452,
+      id: 'ZGxiX2p4',
+      role: 'user',
+      updateAt: 1697862243540,
+      title: 'Anda',
+      avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
+    },
+    {
+      content: 'User: chat 2',
+      createAt: 1697862242453,
+      id: 'ZGxiX2JQ',
+      role: 'user',
+      updateAt: 1697862243540,
+      title: 'Anda',
+      avatar: 'https://randomuser.me/api/portraits/men/78.jpg',
+    },
+    {
+      content: `Assistant: chat 1`,
+      createAt: 1697862242458,
+      id: 'Sb5pAzLL',
+      role: 'assistant',
+      updateAt: 1697862243540,
+      title: 'Assistant',
+      avatar: 'https://randomuser.me/api/portraits/men/8.jpg',
+    },
+    {
+      content: `Assistant: chat 2`,
+      createAt: 1697962242458,
+      id: 'Sb5pAzLM',
+      role: 'assistant',
+      updateAt: 1697962243540,
+      title: 'Assistant',
+      avatar: 'https://randomuser.me/api/portraits/men/8.jpg',
+    },
+  ],
+};
