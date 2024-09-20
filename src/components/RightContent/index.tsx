@@ -1,6 +1,6 @@
 import { BellOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { SelectLang as UmiSelectLang } from '@umijs/max';
-import { Avatar, Badge, Drawer, List } from 'antd';
+import { Avatar, Badge, Divider, Drawer, List } from 'antd';
 import React, { useState } from 'react';
 
 export type SiderTheme = 'light' | 'dark';
@@ -44,19 +44,32 @@ export const Notif = () => {
 
   const data = [
     {
-      title: 'Ant Design Title 1',
+      id: 1,
+      title: 'Yo Sandy',
+      status: 1,
+      desc: 'Lorem ipsum dolor, sit amet'
     },
     {
-      title: 'Ant Design Title 2',
+      id: 2,
+      title: 'Reza Ganda',
+      status: 1,
+      desc: 'Lorem ipsum dolor sit amet'
     },
     {
-      title: 'Ant Design Title 3',
+      id: 3,
+      title: 'Muhammad Hanif',
+      status: 1,
+      desc: 'Lorem ipsum dolor sit.'
     },
     {
-      title: 'Ant Design Title 4',
+      id: 4,
+      title: 'Elwin Gelipta',
+      status: 0,
+      desc: 'Lorem ipsum dolor sit, amet consectetur'
     },
-
   ];
+
+  const jlhData = data.filter(item => item.status === 1).length;
 
   return (
     <>
@@ -68,7 +81,7 @@ export const Notif = () => {
         }}
         onClick={showDrawer}
       >
-        <Badge size="small" count={99}>
+        <Badge size="small" count={jlhData}>
           <BellOutlined style={{ fontSize: 20 }} />
         </Badge>
       </div>
@@ -80,16 +93,34 @@ export const Notif = () => {
         open={visible}
       >
         <List
-          itemLayout="horizontal"
+          // itemLayout="horizontal"
           dataSource={data}
           renderItem={(item, index) => (
-            <List.Item>
-              <List.Item.Meta
-                avatar={<Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />}
-                title={<a href="https://ant.design">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-              />
-            </List.Item>
+            <a href={`/dashboard/${item.title}`}>
+              <List.Item
+                extra={[
+                  <i><small>2 minutes ago</small></i>
+                ]}>
+                <List.Item.Meta
+                  // avatar={<Avatar src={`https://randomuser.me/api/portraits/men/${index}.jpg`} />}
+                  avatar={[
+                    <Avatar src={`https://randomuser.me/api/portraits/men/${index}.jpg`} />
+                  ]}
+                  title={[
+                    item.status === 1 ? (
+                      <Badge count='new' color='green' size='small' offset={[30, 7]}>
+                        {item.title}
+                      </Badge>
+                    ) : (
+                      <>
+                        {item.title}
+                      </>
+                    )
+                  ]}
+                  description={item.desc}
+                />
+              </List.Item>
+            </a>
           )}
         />
       </Drawer>

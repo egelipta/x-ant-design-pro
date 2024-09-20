@@ -4,9 +4,9 @@ import { useTheme } from 'antd-style';
 import './style.css';
 import { dataChat } from '../Datas/data-chat';
 
-// Define an extended ChatMessage type with title
+// Define an extended ChatMessage type
 interface ExtendedChatMessage extends ChatMessage<Record<string, any>> {
-    title?: string;  // Add optional title property
+    title?: string;
     avatar?: string;
 }
 
@@ -18,16 +18,16 @@ const Conversation: React.FC = () => {
     const getUserMeta = () => {
         const userChat = chats.find(chat => chat.role === 'user');
         return {
-            avatar: userChat?.avatar, // Default avatar, you can adjust based on `userChat`
-            title: userChat?.title || 'User', // Set the user title from the chat data
+            avatar: userChat?.avatar,
+            title: userChat?.title || 'User',
         };
     };
 
     const getAssistantMeta = () => {
         const assistantChat = chats.find(chat => chat.role === 'assistant');
         return {
-            avatar: assistantChat?.avatar, // Default assistant avatar
-            title: assistantChat?.title || 'Assistant', // Set the assistant title from the chat data
+            avatar: assistantChat?.avatar,
+            title: assistantChat?.title || 'Assistant',
         };
     };
 
