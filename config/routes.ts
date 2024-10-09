@@ -67,11 +67,18 @@ export default [
     component: './Customer',
     hideInMenu: false,
   },
+  // {
+  //   path: '/tes',
+  //   name: 'tes',
+  //   icon: 'UsergroupAddOutlined',
+  //   component: './Tes',
+  //   hideInMenu: false,
+  // },
   {
-    path: '/tes',
-    name: 'tes',
-    icon: 'UsergroupAddOutlined',
-    component: './Tes',
+    path: '/work-flow-editor',
+    name: 'Workflow Editor',
+    icon: 'VerifiedOutlined',
+    component: './WorkFlowEditor',
     hideInMenu: false,
   },
   {
